@@ -3,7 +3,7 @@
 Pretty tables display JavaScript Objects and Arrays in a tabular format.
 Importantly, it supports nested objects.
 
-Pretty tables was originally made to be used in Obseravble Notebooks.
+Pretty tables was originally made to be used in [Obseravble Notebooks](https://observablehq.com/@saneef/pretty-tables).
 The code is made as package to be used in Observable Framework.
 
 ## Usage
@@ -20,7 +20,6 @@ display(prettyTable(obj));
 
 ```js
 import { prettyTable } from "../index.js";
-import { html } from "htl";
 ```
 
 ```js echo
