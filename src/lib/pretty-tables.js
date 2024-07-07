@@ -1,6 +1,6 @@
 import { html } from "htl";
 import * as isoformat from "isoformat";
-import json2table from "npm:json5-to-table@0.1.8";
+import json2table from "json5-to-table";
 
 const blacklistRegex = /(\.){1}/g;
 
