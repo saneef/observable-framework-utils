@@ -1,0 +1,33 @@
+{
+  "name": "@saneef/observable-framework-utils",
+  "version": "0.0.0",
+  "description": "Collection of tools and utilities to use with Observable Framework.",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "clean": "rimraf src/.observablehq/cache",
+    "build": "rimraf dist && observable build",
+    "dev": "observable preview",
+    "deploy": "observable deploy",
+    "observable": "observable",
+    "test": "npm test"
+  },
+  "keywords": [
+    "observable",
+    "framework",
+    "observablehq"
+  ],
+  "author": "Saneef Ansari <hello@saneef.com> (https://saneef.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "@observablehq/framework": "^1.9.0",
+    "rimraf": "^5.0.5"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "isoformat": "^0.2.1",
+    "json5-to-table": "^0.1.8"
+  }
+}
