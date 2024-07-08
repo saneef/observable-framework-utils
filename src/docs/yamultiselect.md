@@ -1,5 +1,7 @@
 # Yet Another Multi-select
 
+_Introduced in `v0.1.1`._
+
 A replacement for [Observable Input: Select][1] with autocomplete and means to pick multiple options. Uses [`datalist`][2], making it accessible and usable within Observable Notebooks.
 
 The control was originally made to be used in Obseravble Notebooks.

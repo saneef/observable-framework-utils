@@ -1,5 +1,7 @@
 # Pretty Table
 
+_Introduced in `v0.0.3`._
+
 Pretty tables display JavaScript Objects and Arrays in a tabular format.
 Importantly, it supports nested objects.
 
