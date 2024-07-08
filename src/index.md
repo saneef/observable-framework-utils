@@ -5,3 +5,4 @@ A collection of tools and utils to use with [Observable Framework](https://obser
 ## Utilities
 
 - [Pretty tables](/docs/pretty-table)
+- [Yet Another Multi-select](/docs/yamultiselect)
