@@ -1,16 +1,14 @@
 import { html, svg } from "htl";
-import * as Inputs from "npm:@observablehq/inputs";
 
-const ns = Inputs.text().classList[0];
-const msns = ns.replace("oi-", "yams-");
+const msns = "yams";
 const blockClass = `${msns}-form`;
-const newId = () => {
+const newId = (() => {
   let nextId = 0;
 
   return function newId() {
     return `${msns}-${++nextId}`;
   };
-};
+})();
 const icons = {
   close: () =>
     svg`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`,
@@ -102,6 +100,7 @@ export function yamultiselect(data, options = {}) {
   let selectedIndices = new Set(initialIndices);
 
   const id = newId();
+
   const datalistId = `${id}-datalist`;
   const inputEl = html`<input
     id="${id}"
@@ -119,7 +118,7 @@ export function yamultiselect(data, options = {}) {
   const datalistEl = html`<datalist id=${datalistId}></datalist>`;
 
   const form = html`<form
-    class="${ns} ${blockClass}"
+    class="${blockClass}"
     style=${cssPropWidth(width)}
     disabled=${disabled}
   >
@@ -245,6 +244,41 @@ const attachStyles = () => {
       --color-bg-hover: #ffdfdf;
       --color-icon: #777;
       --color-icon-hover: #e7040f;
+
+      --length1: 3.25px;
+      --length2: 6.5px;
+      --length3: 13px;
+      --label-width: 120px;
+      --input-width: 240px;
+      font: 13px/1.2 var(--sans-serif);
+
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      min-height: 25.5px;
+      margin: var(--length3) 0;
+      box-sizing: border-box;
+    }
+
+    .${blockClass} * {
+      box-sizing: inherit;
+    }
+
+    @media only screen and (min-width: 30em) {
+      .${blockClass} {
+        flex-wrap: nowrap;
+        width: calc(var(--input-width) + var(--label-width));
+        max-width: 100%;
+        margin: initial;
+      }
+    }
+
+    .${blockClass} label {
+      flex-shrink: 0;
+      align-self: start;
+      padding: 5px 0 4px 0;
+      width: var(--label-width);
+      margin-right: var(--length2);
     }
 
     .${blockClass}[disabled] {
@@ -252,7 +286,7 @@ const attachStyles = () => {
     }
 
     .${blockClass} input[type="text"] {
-      width: inherit;
+      width: 100%;
     }
 
     .${blockClass}__wrapper {
