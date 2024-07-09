@@ -10,12 +10,15 @@ You can import the utility using `npm:` protocol.
 import { prettyTable } from "npm:@saneef/observable-framework-utils";
 
 // Recommended to use with version
-import { prettyTable } from "npm:@saneef/observable-framework-utils@0.0.3";
+import { prettyTable } from "npm:@saneef/observable-framework-utils@<version>";
+
+// Example
+import { prettyTable } from "npm:@saneef/observable-framework-utils@0.1.1";
 ```
 
 ## Development
 
 ```
 $ npm install
-$ npm run dev # Start Observable Framework locale development server of documentation and testing pages
+$ npm run dev # Starts Observable Framework locale development server of documentation and testing pages
 ```
